@@ -26,6 +26,14 @@ const router = createBrowserRouter([
       </Navbar>
     ),
   },
+  {
+    path: "/messaging",
+    element: (
+      <Navbar>
+        <div>Message</div>
+      </Navbar>
+    ),
+  },
 ]);
 
 function App() {
