@@ -20,12 +20,12 @@ function Header() {
       icon1: <HomeIcon />,
       icon2: <HomeIcon2 />,
     },
-    {
-      path: "/network",
-      tab: "Network",
-      icon1: <NetworkIcon />,
-      icon2: <NetworkIcon2 />,
-    },
+    // {
+    //   path: "/network",
+    //   tab: "Network",
+    //   icon1: <NetworkIcon />,
+    //   icon2: <NetworkIcon2 />,
+    // },
     {
       path: "/jobs",
       tab: "Jobs",
