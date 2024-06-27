@@ -24,7 +24,7 @@ function Search({ label, placeholder, icon }: Props) {
               fill="none"
               viewBox="0 0 20 20">
               <path
-                stroke="currentColor"
+                stroke="#000"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"

@@ -4,63 +4,66 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NetworkIcon from "../../assets/NetworkIcon";
 import JobsIcon from "../../assets/JobsIcon";
+import HomeIcon2 from "../../assets/HomeIcon2";
+import JobsIcon2 from "../../assets/JobsIcon2";
+import NetworkIcon2 from "../../assets/NetworkIcon2";
+import MessageIcon from "../../assets/MessageIcon";
+import MessageIcon2 from "../../assets/MessageIcon2";
 
 function Header() {
   const location = useLocation();
+
+  const items = [
+    {
+      path: "/",
+      tab: "Home",
+      icon1: <HomeIcon />,
+      icon2: <HomeIcon2 />,
+    },
+    {
+      path: "/network",
+      tab: "Network",
+      icon1: <NetworkIcon />,
+      icon2: <NetworkIcon2 />,
+    },
+    {
+      path: "/jobs",
+      tab: "Jobs",
+      icon1: <JobsIcon />,
+      icon2: <JobsIcon2 />,
+    },
+    {
+      path: "/messaging",
+      tab: "Messaging",
+      icon1: <MessageIcon />,
+      icon2: <MessageIcon2 />,
+    },
+  ];
   return (
     <div className="bg-white py-2 px-40">
-      <div className="flex gap-20">
+      <div className="flex gap-40">
         <div className="flex items-center gap-2">
           <div>Logo</div>
-          <div>
+          <div className="w-full flex-shrink-0">
             <Search label={"Search"} placeholder={"Search"} />
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div>
-            <Link to={"/"} className="text-center items-center">
-              <div className="mx-3">
-                <HomeIcon
-                  color={location.pathname == "/" ? "#000000" : "#666666"}
-                />
-              </div>
-              <div>Home</div>
-            </Link>
-          </div>
-          <div>
-            <Link to={"/network"} className="text-center items-center">
-              <div className="mx-3">
-                <NetworkIcon
-                  color={
-                    location.pathname == "/network" ? "#000000" : "#666666"
-                  }
-                />
-              </div>
-              <div>Network</div>
-            </Link>
-          </div>
-          <div>
-            <Link to={"/jobs"}>
-              <div>
-                <div className="">
-                  <JobsIcon
-                    color={location.pathname == "/jobs" ? "#000000" : "#666666"}
-                  />
-                </div>
-                <div>Jobs</div>
-              </div>
-            </Link>
-          </div>
-          <div>
-            <Link to={"/"}>
-              <div></div>
-            </Link>
-          </div>
-          <div>
-            <Link to={"/"}>
-              <div></div>
-            </Link>
-          </div>
+        <div className="flex items-center gap-8">
+          {items.map((t, i) => (
+            <div className="items-center text-center w-20" key={i}>
+              <Link to={t.path} className="text-center items-center">
+                {t.path == location.pathname ? (
+                  <div>{t.icon2}</div>
+                ) : (
+                  <div>{t.icon1}</div>
+                )}
+                <div className={`text-xs ${t.path == location.pathname ? "text-black" : "text-[#666]"}`}>{t.tab}</div>
+              </Link>
+              {location.pathname == t.path ? (
+                <hr className="border border-black mt-2 -mb-2" />
+              ) : null}
+            </div>
+          ))}
         </div>
       </div>
     </div>
