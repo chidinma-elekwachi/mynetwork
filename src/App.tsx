@@ -1,12 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./Pages/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <Navbar>
-        <div>Home</div>
+        <Home />
       </Navbar>
     ),
   },
