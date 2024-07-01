@@ -54,7 +54,7 @@ type PeopleListProps = {
 
 const PeopleList: React.FC<PeopleListProps> = ({ people = [defaultPerson] }) => {
   return (
-    <div className="p-6">
+    <div className="">
       {people.map(person => (
         <PersonDetail key={person.id} person={person} />
       ))}
