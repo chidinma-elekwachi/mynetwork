@@ -41,10 +41,10 @@ function Header() {
   ];
   return (
     <div className="bg-white py-2 px-40">
-      <div className="flex gap-40">
+      <div className="md:flex md:gap-40">
         <div className="flex items-center gap-2">
-          <div>Logo</div>
-          <div className="w-full flex-shrink-0">
+          <div className="hidden md:block">Logo</div>
+          <div className="w-full flex-shrink-0 hidden md:block">
             <Search label={"Search"} placeholder={"Search"} />
           </div>
         </div>
