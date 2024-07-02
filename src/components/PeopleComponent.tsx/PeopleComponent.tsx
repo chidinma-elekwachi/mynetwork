@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 type Person = {
   id: number;
@@ -17,13 +17,13 @@ type PersonDetailProps = {
 
 const defaultPerson: Person = {
   id: 0,
-  name: 'Charles darwin',
-  pronouns: 'She/her',
-  role: 'Future Start up Owner',
-  description: 'Default description',
-  timestamp: '1h',
-  message: 'I am a Software engineer that enjoys learning and good foods too, I want a soft life too :)',
-  imageUrl: 'https://via.placeholder.com/150',
+  name: "Charles darwin",
+  pronouns: "She/her",
+  role: "Future Start up Owner",
+  description: "Default description",
+  timestamp: "1h",
+  message: "I am a Software engineer that enjoys learning and good foods too, I want a soft life too :)",
+  imageUrl: "https://via.placeholder.com/150",
 };
 
 // For the button update:
@@ -35,22 +35,31 @@ const FollowButton: React.FC = () => {
   };
 
   return (
-    <button onClick={handleClick} className=" text-customGreen py-1 px-3 hover:bg-customGreen hover:text-white rounded-full hidden md:block">
-      {isFollowing ? 'Following' : 'Follow'}
+    <button
+      onClick={handleClick}
+      className=" text-customGreen py-1 px-3 hover:bg-customGreen hover:text-white rounded-full hidden md:block">
+      {isFollowing ? "Following" : "Follow"}
     </button>
   );
 };
 
-
-const PersonDetail: React.FC<PersonDetailProps> = ({ person = defaultPerson }) => {
+const PersonDetail: React.FC<PersonDetailProps> = ({
+  person = defaultPerson,
+}) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mb-4 w-full">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img className="h-10 w-10 rounded-full mr-4" src={person.imageUrl} alt={person.name} />
+          <img
+            className="h-10 w-10 rounded-full mr-4"
+            src={person.imageUrl}
+            alt={person.name}
+          />
           <div>
             <h2 className="text-lg font-bold">{person.name}</h2>
-            <p className="text-sm text-gray-500">{person.pronouns} • {person.role}</p>
+            <p className="text-sm text-gray-500">
+              {person.pronouns} • {person.role}
+            </p>
           </div>
         </div>
         <FollowButton />
@@ -59,9 +68,7 @@ const PersonDetail: React.FC<PersonDetailProps> = ({ person = defaultPerson }) =
       <div className="mt-2 text-sm text-gray-500">
         <span>{person.timestamp}</span> • <span>Edited</span>
       </div>
-      <div className="mt-4 text-gray-700">
-        {person.message}
-      </div>
+      <div className="mt-4 text-gray-700">{person.message}</div>
     </div>
   );
 };
@@ -70,10 +77,12 @@ type PeopleListProps = {
   people?: Person[];
 };
 
-const PeopleList: React.FC<PeopleListProps> = ({ people = [defaultPerson] }) => {
+const PeopleList: React.FC<PeopleListProps> = ({
+  people = [defaultPerson],
+}) => {
   return (
     <div className="">
-      {people.map(person => (
+      {people.map((person) => (
         <PersonDetail key={person.id} person={person} />
       ))}
     </div>
