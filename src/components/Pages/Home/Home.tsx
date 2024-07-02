@@ -15,6 +15,7 @@ function Home() {
       savedItems: 6,
     },
   ]);
+
   return (
     <div className="mx-40 my-5">
       <div className="md:flex gap-20">
@@ -35,13 +36,17 @@ function Home() {
             </div>
           ))}
         </div>
+        
+      
 
-        <div className="w-full md:w-2/5">
+        <div className="">
           {/* This is the feed they share */}
-          <div className=" ">
+          <div className="w-full bg-white p-6 rounded-lg shadow-md mb-4 md:w-2/5">
             <PeopleList />
           </div>
         </div>
+
+
       </div>
     </div>
   );

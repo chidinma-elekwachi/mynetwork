@@ -28,7 +28,7 @@ function FeedIdentity({
         <div>
           <div>
             <img
-              className="h-10 w-10 rounded-full my-4 relative left-24"
+              className="h-10 w-10 rounded-full my-4 relative left-20"
               src={imageUrl}
               alt={name}
             />
