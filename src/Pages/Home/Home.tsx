@@ -5,7 +5,7 @@ import NetworkingNewsSection from "../../components/NetworkingNewsSection/Networ
 
 function Home() {
   return (
-    <div className="mx-40 my-5">
+    <div className="mx-20 my-5">
       <div className="md:flex gap-20">
         <div className="md:w-1/5 hidden md:block">
           <div>

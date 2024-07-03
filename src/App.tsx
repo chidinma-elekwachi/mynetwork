@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
+import Network from "./Pages/Network/Network";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     path: "/network",
     element: (
       <Navbar>
-        <div>Network</div>
+        <Network />
       </Navbar>
     ),
   },
