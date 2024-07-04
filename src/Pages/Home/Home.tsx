@@ -17,7 +17,6 @@ function Home() {
           <PostSection />
           <div className=" ">
             <PeopleList />
-            <PeopleList />
           </div>
         </div>
         <div className="hidden md:block">

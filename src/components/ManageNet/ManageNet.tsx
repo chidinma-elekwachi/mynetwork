@@ -25,7 +25,7 @@ function ManageMyNetwork() {
   ];
 
   return (
-    <div className="p-3 w-full max-w-md bg-white rounded-lg shadow-md mb-4 border-2 border-gray-300">
+    <div className="p-3 w-full max-w-md bg-white rounded-lg shadow-md mb-4 border border-gray-300">
       <div className="flex items-center justify-between cursor-pointer" onClick={toggleDropdown}>
         <h2 className="text-lg font-semibold ">Manage my network</h2>
         <img
