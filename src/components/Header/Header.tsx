@@ -12,7 +12,7 @@ import MessageIcon2 from "../../assets/MessageIcon2";
 
 function Header() {
   const location = useLocation();
-
+  
   const items = [
     {
       path: "/",
