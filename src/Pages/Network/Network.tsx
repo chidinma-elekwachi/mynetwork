@@ -4,7 +4,6 @@ import CatchUp from '../../components/CatchUp/CatchUp'
 
 function Network() {
 
-    
 
   return (
     

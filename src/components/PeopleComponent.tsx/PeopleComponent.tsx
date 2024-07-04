@@ -17,7 +17,7 @@ type PersonDetailProps = {
 
 const defaultPerson: Person = {
   id: 0,
-  name: "Charles darwin",
+  name: "Chidinma Elekwachi",
   pronouns: "She/her",
   role: "Future Start up Owner",
   description: "Default description",
