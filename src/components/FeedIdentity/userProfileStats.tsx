@@ -13,7 +13,11 @@ function userProfileStats() {
       profileViewers: 14,
       postImpressions: 37,
       savedItems: 6,
+      id: 0,
+      timestamp: "",
+      message: ""
     },
+    
   ]);
 
   return (

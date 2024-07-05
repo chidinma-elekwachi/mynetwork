@@ -19,7 +19,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ name, occupation, image }) => {
     };
   
   return (
-    <div className="w-full sm:w-1/2 md:w-1/4 bg-white p-4 rounded shadow-md flex flex-col justify-between items-center space-y-2">
+    <div className="w-full sm:w-1/2 md:w-1/4 bg-white p-4 rounded-xl shadow-md flex flex-col justify-between items-center space-y-2">
       <img src={Chichi} alt={name} className="w-16 h-16 rounded-full" />
       <div className="text-lg font-semibold text-center">{name}</div>
       <div className="text-gray-600 text-center">{occupation}</div>
