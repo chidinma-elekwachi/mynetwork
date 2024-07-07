@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface JobDetails {
   title: string;
@@ -9,7 +9,7 @@ interface JobDetails {
 }
 
 const JobPicks = () => {
-  const [jobDetails, setJobDetails] = useState<JobDetails[]>([
+  const [jobDetails] = useState<JobDetails[]>([
     {
         title: 'Football Analyst',
         company: 'Football Insights Ltd',
