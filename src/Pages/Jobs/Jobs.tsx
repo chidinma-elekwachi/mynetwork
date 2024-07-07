@@ -1,4 +1,3 @@
-import React from 'react'
 import JobPrep from '../../components/JobPrep/JobPrep';
 import JobPicks from '../../components/JobPicks/JobPicks';
 import JobSeekerGuidance from '../../components/JobSeek/JobSeekerGuide';
