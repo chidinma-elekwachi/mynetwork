@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { newsArticle } from "../../Types/newsArticle";
 
 function NetworkingNewsSection() {
-  const [newsArticles, setNewsArticles] = useState<newsArticle[]>([
+  const [newsArticles] = useState<newsArticle[]>([
     {
       title: "Star Player Signs New Contract",
       time: "12h ago",

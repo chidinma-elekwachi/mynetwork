@@ -1,10 +1,11 @@
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { useState } from "react";
-import { ProfileStats } from '../../Types/profileStats';
+import { ProfileStats } from "../../Types/profileStats";
 
 function userProfileStats() {
-  const [feedId, setFeedId] = useState<ProfileStats[]>([
+  const [feedId] = useState<ProfileStats[]>([
     {
+      id: 1,
       imageUrl: "https://via.placeholder.com/40",
       name: "Chidinma Elekwachi",
       pronouns: "She/Her",
@@ -13,6 +14,8 @@ function userProfileStats() {
       profileViewers: 14,
       postImpressions: 37,
       savedItems: 6,
+      timestamp: "2024-03-14T12:00:00Z",
+      message: "This is a message",
     },
   ]);
 

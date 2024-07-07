@@ -1,4 +1,3 @@
-import React from "react";
 import ManageNet from "../../components/ManageNet/ManageNet";
 import CatchUp from "../../components/CatchUp/CatchUp";
 

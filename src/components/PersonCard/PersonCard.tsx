@@ -7,7 +7,7 @@ interface PersonCardProps {
   image?: string;
 }
 
-const PersonCard: React.FC<PersonCardProps> = ({ name, occupation, image }) => {
+const PersonCard: React.FC<PersonCardProps> = ({ name, occupation }) => {
     const [connected, setConnected] = useState(false);
 
     const handleConnect = () => {

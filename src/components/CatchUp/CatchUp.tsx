@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PersonCard from '../PersonCard/PersonCard';
 import Chichi from "../../assets/Elexis.jpg"
 import Chichi2 from "../../assets/Elexis.jpg"

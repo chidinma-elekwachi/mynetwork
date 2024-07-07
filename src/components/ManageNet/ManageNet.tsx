@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import chevron from "../../assets/chevron.png";
 
 interface NetworkItem {
