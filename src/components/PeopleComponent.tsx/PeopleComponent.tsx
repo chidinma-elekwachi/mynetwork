@@ -3,7 +3,7 @@ import { ProfileStats } from "../../Types/profileStats";
 import FollowButton from "../Button/FollowButton";
 
 function PeopleComponent() {
-  const [userDetails, setUserDetails] = useState<ProfileStats[]>([
+  const [userDetails] = useState<ProfileStats[]>([
     {
       id: 0,
       name: "Chidinma Elekwachi",
