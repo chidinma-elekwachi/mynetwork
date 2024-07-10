@@ -9,6 +9,9 @@ import JobsIcon2 from "../../assets/JobsIcon2";
 import NetworkIcon2 from "../../assets/NetworkIcon2";
 import MessageIcon from "../../assets/MessageIcon";
 import MessageIcon2 from "../../assets/MessageIcon2";
+import GroupIcon2 from "../../assets/groups2.png";
+import GroupIcon1 from "../../assets/groups1.png";
+
 
 function Header() {
   const location = useLocation();
@@ -22,7 +25,7 @@ function Header() {
     },
     {
       path: "/network",
-      tab: "Network",
+      tab: "Friends",
       icon1: <NetworkIcon />,
       icon2: <NetworkIcon2 />,
     },
@@ -33,14 +36,32 @@ function Header() {
       icon2: <JobsIcon2 />,
     },
     {
-      path: "/messaging",
-      tab: "Messaging",
+      path: "/groups",
+      tab: "Groups",
+      icon1: <img src={GroupIcon1} alt="" width={24} height={24}/>,
+      icon2: <img src={GroupIcon2} alt="" width={24} height={24}/>,
+    },
+    {
+      path: "/gallery",
+      tab: "Gallery",
       icon1: <MessageIcon />,
       icon2: <MessageIcon2 />,
     },
+    {
+      path: "/events",
+      tab: "Events",
+      icon1: <NetworkIcon />,
+      icon2: <NetworkIcon2 />,
+    },
+    // {
+    //   path: "/messaging",
+    //   tab: "Messaging",
+    //   icon1: <MessageIcon />,
+    //   icon2: <MessageIcon2 />,
+    // },
   ];
   return (
-    <div className="bg-white py-2 px-40">
+    <div className="bg-white py-2 px-10 md:px-40">
       <div className="md:flex md:gap-40">
         <div className="flex items-center gap-2">
           <div className="hidden md:block">Logo</div>
@@ -53,7 +74,7 @@ function Header() {
             <div className="items-center text-center w-20" key={i}>
               <Link to={t.path} className="text-center items-center">
                 {t.path == location.pathname ? (
-                  <div>{t.icon2}</div>
+                  <div className="">{t.icon2}</div>
                 ) : (
                   <div>{t.icon1}</div>
                 )}
