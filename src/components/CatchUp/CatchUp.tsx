@@ -8,12 +8,11 @@ function CatchUp() {
   const people = [
     {
       name: 'Callum Jones',
-      occupation: 'HTML / CSS / JS / PHP / SQL / Flutter -----',
-      basedOnProfile: true,
+      occupation: 'PHP / SQL / Flutter -----',
     },
     {
       name: 'Chidinma Elekwachi',
-      occupation: 'Just completed my studies and I am open to work,...',
+      occupation: 'Just completed my studies and,...',
       image: Chichi
     },
     {
@@ -22,7 +21,7 @@ function CatchUp() {
     },
     {
       name: 'Olasunkanmi Akingbesote',
-      occupation: 'Project Management Student (Northumbria University)',
+      occupation: 'Fifa Manager & footballer',
       image: Chichi2
     },
   ];
@@ -37,16 +36,23 @@ function CatchUp() {
       occupation: 'Celebrating 800 career goals milestone',
       status: 'Status is reachable',
     },
+    {
+      name: 'Mbappe Chidinma',
+      occupation: 'Nigerian woman weds popular footballer and becoms a WAG!!',
+      status: 'Status is trendy',
+    },
   ];
 
-  const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [activeButton, setActiveButton] = useState('grow'); // Set default to 'grow'
+
 
   const handleButtonClick = (button: string) => {
-    setActiveButton(activeButton === button ? null : button);
+    setActiveButton(button);
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md border-2 border-gray-300">
+    <div>
+        <div className=" bg-white rounded-lg shadow-md border-2 border-gray-300">
       <div className='flex'>
         <button
           className={`mx-2 font-semibold p-3 hover:bg-gray-200 border-b-2 ${activeButton === 'grow' ? 'border-b-2 border-customGreen' : 'border-0'}`}
@@ -61,9 +67,11 @@ function CatchUp() {
           Catch Up
         </button>
       </div>
-      {/* For the grow button */}
+
+      </div>
+
       {activeButton === 'grow' && (
-        <div className="mt-4 p-4 border-t border-gray-200">
+        <div className="mt-4 p-4 ">
               <div className="flex gap-5">
                   {people.map((person, index) => (
                     <PersonCard
@@ -77,7 +85,7 @@ function CatchUp() {
       )}
 
       {activeButton === 'catchUp' && (
-          <div className="mt-4 p-4 border-t border-gray-200">
+          <div className="mt-4 p-4">
           {catchUpData.map((person, index) => (
             <div key={index} className="bg-white p-4 rounded shadow-md mb-4">
               <div className="font-semibold">{person.name}</div>
@@ -87,7 +95,11 @@ function CatchUp() {
           ))}
         </div>
       )}
+
     </div>
+    
+      
+    
   );
 }
 

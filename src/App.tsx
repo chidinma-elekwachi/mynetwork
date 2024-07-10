@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Network from "./Pages/Network/Network";
+import Jobs from "./Pages/Jobs/Jobs";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     path: "/jobs",
     element: (
       <Navbar>
-        <div>Jobs</div>
+        <Jobs />
       </Navbar>
     ),
   },
