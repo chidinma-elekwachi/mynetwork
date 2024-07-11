@@ -33,6 +33,12 @@ function Header() {
       icon2: <JobsIcon2 />,
     },
     {
+      path: "/groups",
+      tab: "Groups",
+      icon1: <NetworkIcon />,
+      icon2: <NetworkIcon2 />,
+    },
+    {
       path: "/messaging",
       tab: "Messaging",
       icon1: <MessageIcon />,
