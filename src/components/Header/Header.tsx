@@ -12,7 +12,7 @@ import MessageIcon2 from "../../assets/MessageIcon2";
 
 function Header() {
   const location = useLocation();
-  
+
   const items = [
     {
       path: "/",
@@ -39,6 +39,12 @@ function Header() {
       icon2: <NetworkIcon2 />,
     },
     {
+      path: "/events",
+      tab: "Events",
+      icon1: <MessageIcon />,
+      icon2: <MessageIcon2 />,
+    },
+    {
       path: "/messaging",
       tab: "Messaging",
       icon1: <MessageIcon />,
@@ -63,7 +69,12 @@ function Header() {
                 ) : (
                   <div>{t.icon1}</div>
                 )}
-                <div className={`text-xs ${t.path == location.pathname ? "text-black" : "text-[#666]"}`}>{t.tab}</div>
+                <div
+                  className={`text-xs ${
+                    t.path == location.pathname ? "text-black" : "text-[#666]"
+                  }`}>
+                  {t.tab}
+                </div>
               </Link>
               {location.pathname == t.path ? (
                 <hr className="border border-black mt-2 -mb-2" />
