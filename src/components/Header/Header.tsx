@@ -10,6 +10,7 @@ import NetworkIcon2 from "../../assets/NetworkIcon2";
 import MessageIcon from "../../assets/MessageIcon";
 import MessageIcon2 from "../../assets/MessageIcon2";
 
+
 function Header() {
   const location = useLocation();
 
@@ -21,8 +22,8 @@ function Header() {
       icon2: <HomeIcon2 />,
     },
     {
-      path: "/network",
-      tab: "Network",
+      path: "/friends",
+      tab: "Friends",
       icon1: <NetworkIcon />,
       icon2: <NetworkIcon2 />,
     },
@@ -35,6 +36,12 @@ function Header() {
     {
       path: "/groups",
       tab: "Groups",
+      icon1: <NetworkIcon />,
+      icon2: <NetworkIcon2 />,
+    },
+    {
+      path: "/gallery",
+      tab: "Gallery",
       icon1: <NetworkIcon />,
       icon2: <NetworkIcon2 />,
     },
@@ -52,7 +59,7 @@ function Header() {
     },
   ];
   return (
-    <div className="bg-white py-2 px-40">
+    <div className="bg-white py-2 px-10 md:px-40">
       <div className="md:flex md:gap-40">
         <div className="flex items-center gap-2">
           <div className="hidden md:block">Logo</div>
@@ -65,7 +72,7 @@ function Header() {
             <div className="items-center text-center w-20" key={i}>
               <Link to={t.path} className="text-center items-center">
                 {t.path == location.pathname ? (
-                  <div>{t.icon2}</div>
+                  <div className="">{t.icon2}</div>
                 ) : (
                   <div>{t.icon1}</div>
                 )}

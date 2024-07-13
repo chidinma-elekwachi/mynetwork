@@ -34,7 +34,7 @@ function NetworkingNewsSection() {
       <h2 className="text-lg font-bold">Networking News</h2>
       <h2 className="text-base text-gray-500">Player News</h2>
       <div className="mt-4">
-        <h3 className="text-md font-semibold text-customGreen">Top stories</h3>
+        <h3 className="text-md font-semibold text-customGreen">Trending Now!</h3>
         {newsArticles.map((article, index) => (
           <div key={index} className="mt-2 hover:bg-gray-100 px-2">
             <h4 className="text-sm font-bold">{article.title}</h4>
