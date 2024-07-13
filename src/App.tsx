@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Network from "./Pages/Network/Network";
 import Jobs from "./Pages/Jobs/Jobs";
+import Groups from "./Pages/Groups/Groups";
 import Events from "./Pages/Events/Events";
 
 const router = createBrowserRouter([
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
     element: (
       <Navbar>
         <Jobs />
+      </Navbar>
+    ),
+  },
+  {
+    path: "/groups",
+    element: (
+      <Navbar>
+        <Groups />
       </Navbar>
     ),
   },
