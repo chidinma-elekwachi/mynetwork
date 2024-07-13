@@ -9,13 +9,11 @@ import JobsIcon2 from "../../assets/JobsIcon2";
 import NetworkIcon2 from "../../assets/NetworkIcon2";
 import MessageIcon from "../../assets/MessageIcon";
 import MessageIcon2 from "../../assets/MessageIcon2";
-import GroupIcon2 from "../../assets/groups2.png";
-import GroupIcon1 from "../../assets/groups1.png";
 
 
 function Header() {
   const location = useLocation();
-  
+
   const items = [
     {
       path: "/",
@@ -24,7 +22,7 @@ function Header() {
       icon2: <HomeIcon2 />,
     },
     {
-      path: "/network",
+      path: "/friends",
       tab: "Friends",
       icon1: <NetworkIcon />,
       icon2: <NetworkIcon2 />,
@@ -38,27 +36,27 @@ function Header() {
     {
       path: "/groups",
       tab: "Groups",
-      icon1: <img src={GroupIcon1} alt="" width={24} height={24}/>,
-      icon2: <img src={GroupIcon2} alt="" width={24} height={24}/>,
+      icon1: <NetworkIcon />,
+      icon2: <NetworkIcon2 />,
     },
     {
       path: "/gallery",
       tab: "Gallery",
-      icon1: <MessageIcon />,
-      icon2: <MessageIcon2 />,
+      icon1: <NetworkIcon />,
+      icon2: <NetworkIcon2 />,
     },
     {
       path: "/events",
       tab: "Events",
-      icon1: <NetworkIcon />,
-      icon2: <NetworkIcon2 />,
+      icon1: <MessageIcon />,
+      icon2: <MessageIcon2 />,
     },
-    // {
-    //   path: "/messaging",
-    //   tab: "Messaging",
-    //   icon1: <MessageIcon />,
-    //   icon2: <MessageIcon2 />,
-    // },
+    {
+      path: "/messaging",
+      tab: "Messaging",
+      icon1: <MessageIcon />,
+      icon2: <MessageIcon2 />,
+    },
   ];
   return (
     <div className="bg-white py-2 px-10 md:px-40">
@@ -78,7 +76,12 @@ function Header() {
                 ) : (
                   <div>{t.icon1}</div>
                 )}
-                <div className={`text-xs ${t.path == location.pathname ? "text-black" : "text-[#666]"}`}>{t.tab}</div>
+                <div
+                  className={`text-xs ${
+                    t.path == location.pathname ? "text-black" : "text-[#666]"
+                  }`}>
+                  {t.tab}
+                </div>
               </Link>
               {location.pathname == t.path ? (
                 <hr className="border border-black mt-2 -mb-2" />

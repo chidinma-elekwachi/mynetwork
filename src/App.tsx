@@ -5,6 +5,7 @@ import Network from "./Pages/Network/Network";
 import Jobs from "./Pages/Jobs/Jobs";
 import Gallery from "./Pages/Gallery/Gallery";
 import Groups from "./Pages/Groups/Groups";
+import Events from "./Pages/Events/Events";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/network",
+    path: "/friends",
     element: (
       <Navbar>
         <Network />
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
     path: "/events",
     element: (
       <Navbar>
-        <div>events</div>
+        <Events />
       </Navbar>
     ),
   },
