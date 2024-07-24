@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Chichi from '../../assets/Elexis.jpg';
+import GalleryInfo from '../../components/GalleryInfo/GalleryInfo';
 
 type Image = {
   id: number;
@@ -19,6 +20,7 @@ const images: Image[] = [
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
+  const [likedStates, setLikedStates] = useState<boolean[]>(new Array(images.length).fill(false));
 
   const handleClick = (image: Image) => {
     setSelectedImage(image);
@@ -30,6 +32,37 @@ function Gallery() {
 
   const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLDivElement).classList.contains('modal-overlay')) {
+      handleClose();
+    }
+  };
+
+  const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); 
+    if (selectedImage) {
+      const currentIndex = images.findIndex(image => image.id === selectedImage.id);
+      const nextIndex = (currentIndex + 1) % images.length;
+      setSelectedImage(images[nextIndex]);
+    }
+  };
+
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); 
+    if (selectedImage) {
+      const currentIndex = images.findIndex(image => image.id === selectedImage.id);
+      const prevIndex = (currentIndex - 1 + images.length) % images.length;
+      setSelectedImage(images[prevIndex]);
+    }
+  };
+
+  const handleLikeClick = (index: number) => {
+
+    const newLikedStates = [...likedStates];
+    newLikedStates[index] = !newLikedStates[index];
+    setLikedStates(newLikedStates);
+  };
+
+  const handleContentClick = () => {
+    if (window.innerWidth < 640) {
       handleClose();
     }
   };
@@ -47,12 +80,20 @@ function Gallery() {
       </div>
       {selectedImage && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 modal-overlay" onClick={handleOutsideClick}>
-          <div className="bg-white rounded p-4 max-w-xl w-full relative">
-            <button onClick={handleClose} className="absolute top-4 right-4 text-black text-2xl">&times;</button>
-            <img src={selectedImage.url} alt={selectedImage.alt} className="w-full h-auto max-h-[80vh] object-contain mb-4" />
-            <div className="text-center">
-              <p className="text-lg font-bold">{selectedImage.alt}</p>
-              <p className="text-gray-600">Additional details about the image can go here.</p>
+          <div className="bg-white rounded p-4 max-w-4xl w-full max-h-[90vh] overflow-y-auto flex flex-col sm:flex-row relative" onClick={handleContentClick}>
+            <button onClick={handleClose} className="absolute top-6 right-8 text-black text-2xl hidden sm:block">&times;</button>
+            <div className="relative w-full sm:w-4/6 mb-4 sm:mb-0">
+              <img src={selectedImage.url} alt={selectedImage.alt} className="w-full h-auto max-h-[80vh] object-contain" />
+              <button onClick={handlePrev} className="absolute left-16 top-1/2 transform -translate-y-1/2 bg-gray-50 bg-opacity-50 rounded-full p-2 text-black text-2xl hover:bg-gray-100">&lt;</button>
+              <button onClick={handleNext} className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-gray-50 bg-opacity-50 rounded-full p-2 text-black text-2xl hover:bg-gray-100">&gt;</button>
+            </div>
+            <div className="w-full sm:w-2/6 flex flex-col sm:overflow-y-auto">
+              <GalleryInfo
+                index={images.findIndex(image => image.id === selectedImage.id)}
+                liked={likedStates[images.findIndex(image => image.id === selectedImage.id)]}
+                likeCount={likedStates[images.findIndex(image => image.id === selectedImage.id)] ? 1 : 0}
+                onLikeClick={handleLikeClick}
+              />
             </div>
           </div>
         </div>
