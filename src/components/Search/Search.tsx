@@ -34,7 +34,7 @@ function Search({ label, placeholder, icon }: Props) {
           <input
             type="search"
             id="default-search"
-            className="block w-full p-2 ps-10 text-sm text-gray-900 border border-transparent rounded-md bg-[#edf3f7] focus:border-transparent"
+            className="block w-full p-2 ps-10 text-sm text-gray-500 placeholder:text-gray-500 border border-transparent rounded-md bg-lime-500 focus:border-transparent"
             placeholder={placeholder}
             required
           />

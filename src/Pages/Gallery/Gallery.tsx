@@ -55,7 +55,6 @@ function Gallery() {
   };
 
   const handleLikeClick = (index: number) => {
-
     const newLikedStates = [...likedStates];
     newLikedStates[index] = !newLikedStates[index];
     setLikedStates(newLikedStates);

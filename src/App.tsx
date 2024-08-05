@@ -6,6 +6,7 @@ import Jobs from "./Pages/Jobs/Jobs";
 import Gallery from "./Pages/Gallery/Gallery";
 import Groups from "./Pages/Groups/Groups";
 import Events from "./Pages/Events/Events";
+import ClubNavbar from "./Pages/Clubs/NavBar";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
         <div>Message</div>
       </Navbar>
     ),
+  },
+  {
+    path: "/clubs",
+    element: <ClubNavbar />,
   },
 ]);
 

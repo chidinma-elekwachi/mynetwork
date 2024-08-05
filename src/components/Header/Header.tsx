@@ -9,7 +9,7 @@ import JobsIcon2 from "../../assets/JobsIcon2";
 import NetworkIcon2 from "../../assets/NetworkIcon2";
 import MessageIcon from "../../assets/MessageIcon";
 import MessageIcon2 from "../../assets/MessageIcon2";
-
+import Profile from "../Profile/Profile";
 
 function Header() {
   const location = useLocation();
@@ -51,43 +51,48 @@ function Header() {
       icon1: <MessageIcon />,
       icon2: <MessageIcon2 />,
     },
-    {
-      path: "/messaging",
-      tab: "Messaging",
-      icon1: <MessageIcon />,
-      icon2: <MessageIcon2 />,
-    },
+    // {
+    //   path: "/messaging",
+    //   tab: "Messaging",
+    //   icon1: <MessageIcon />,
+    //   icon2: <MessageIcon2 />,
+    // },
   ];
   return (
-    <div className="bg-white py-2 px-10 md:px-40">
-      <div className="md:flex md:gap-40">
+    <div className="bg-white py-2 px-10 md:px-24">
+      <div className="md:flex md:gap-48">
         <div className="flex items-center gap-2">
-          <div className="hidden md:block">Logo</div>
+          <div className="hidden md:block font-bold text-xl"><span className="text-lime-500">FOOT</span>WORKING</div>
           <div className="w-full flex-shrink-0 hidden md:block">
             <Search label={"Search"} placeholder={"Search"} />
           </div>
         </div>
-        <div className="flex items-center gap-8">
-          {items.map((t, i) => (
-            <div className="items-center text-center w-20" key={i}>
-              <Link to={t.path} className="text-center items-center">
-                {t.path == location.pathname ? (
-                  <div className="">{t.icon2}</div>
-                ) : (
-                  <div>{t.icon1}</div>
-                )}
-                <div
-                  className={`text-xs ${
-                    t.path == location.pathname ? "text-black" : "text-[#666]"
-                  }`}>
-                  {t.tab}
-                </div>
-              </Link>
-              {location.pathname == t.path ? (
-                <hr className="border border-black mt-2 -mb-2" />
-              ) : null}
-            </div>
-          ))}
+        <div className="flex items-center justify-end gap-10">
+          <div className="flex items-center gap-8">
+            {items.map((t, i) => (
+              <div className="items-center text-center w-20" key={i}>
+                <Link to={t.path} className="text-center items-center">
+                  {t.path == location.pathname ? (
+                    <div className="">{t.icon2}</div>
+                  ) : (
+                    <div>{t.icon1}</div>
+                  )}
+                  <div
+                    className={`text-xs ${
+                      t.path == location.pathname ? "text-black" : "text-[#666]"
+                    }`}>
+                    {t.tab}
+                  </div>
+                </Link>
+                {location.pathname == t.path ? (
+                  <hr className="border border-black mt-2 -mb-2" />
+                ) : null}
+              </div>
+            ))}
+          </div>
+          <div>
+           <Profile />
+          </div>
         </div>
       </div>
     </div>
